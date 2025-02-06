@@ -113,31 +113,4 @@ export const generateResearchReportPrompt = (
     - Follow-up questions that helped refine the research process:
         ${formatList(followUpQuestions)}
 
-    Compose a comprehensive, in-depth research report that is at least 1500 words long. The report should adhere to the following structure and guidelines:
-
-    - **Research Question & Significance:**  
-    Begin by outlining the research question clearly. Explain why this question is important and relevant in its respective field. Include context and any background information necessary for understanding the scope of the research.
-    - **Data Organization:**  
-    Present all extracted insights and relevant data in a structured and easily digestible format. Use subheadings, bullet points, and numbered lists where appropriate.
-    - **Use of Provided Components:**  
-    Ensure that every component (user query, collected learnings, precise queries, and follow-up questions) is integrated into this section. Clearly indicate how each component contributes to the overall understanding of the research topic.
-    - **Patterns and Trends:**  
-    Analyze the insights to identify any patterns, recurring themes, or trends.
-    - **Implications:**  
-    Discuss the implications of these findings. How do they impact the field? What potential benefits or challenges do they present?
-    - **Limitations:**  
-    Critically evaluate any limitations of the research. Consider potential biases, gaps in the data, or areas where the evidence may be weak or contradictory.
-    - **Summary of Research Outcomes:**  
-    Summarize the overall outcomes of the research. Restate the key insights and their importance.
-    - **Future Research Directions:**  
-    Provide thoughtful suggestions for future research. Identify any unanswered questions, potential areas for further exploration, or innovative directions that could build upon the current findings.
-    - **Clarity and Logical Structure:**  
-    Ensure that the report is clear, logically structured, and easy to follow.
-    - **Depth and Detail:**  
-    Aim for a deep and detailed analysis. The report should provide comprehensive coverage of the topic, supporting its findings with robust evidence and reasoning.
-    - **Formatting:**  
-    Where helpful, include code blocks, tables, or additional formatted sections to highlight key data, summaries, or analysis.
-    - **References and Similar Problems:**  
-    Where applicable, include references to the sources of your insights and suggest similar problems or areas of inquiry that could be relevant.
-
-    Your final report should be a professional, analytical document that is as detailed as possible, catering to readers who require an in-depth understanding of the research process, findings, and future implications.`;
+    Compose a comprehensive, in-depth research report that is at least 1500 words long. Your final report should be a professional, analytical document that is as detailed as possible, catering to readers who require an in-depth understanding of the research process, findings, and future implications.`;
