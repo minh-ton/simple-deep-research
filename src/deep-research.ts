@@ -71,9 +71,7 @@ async function handleSearchResults(query: string) {
     scrapeOptions: { formats: ['markdown'] },
   });
 
-  console.log(
-    chalk.blue.bold(`\nLet's see what we can find for "${query}"...`),
-  );
+  console.log(chalk.blue.bold(`\nSearching for "${query}"...`));
 
   for (const res of result.data) {
     const { title, url = '', markdown: pageContent = '' } = res;
@@ -101,8 +99,9 @@ export const DeepResearch = async (preciseQueries: string[] = []) => {
 
     for (const query of queries) {
       await handleSearchResults(query);
-      // Rate limit the search because I don't have a paid Firecrawl plan :)
-      setTimeout(() => {}, SEARCH_RATE_LIMIT_MILISECONDS);
+      await new Promise(resolve =>
+        setTimeout(resolve, SEARCH_RATE_LIMIT_MILISECONDS),
+      );
     }
 
     console.log(chalk.blue.bold("\nAnalyzing what we've learned so far..."));
@@ -125,6 +124,8 @@ export const DeepResearch = async (preciseQueries: string[] = []) => {
         chalk.blue.bold("Let's dive deeper to gather more insights!\n"),
       );
       state.researchDepth = state.researchDepth + 1;
+
+      // Deepen the research with the additional queries
       await DeepResearch(sufficiencyAssessment.additionalQueries);
     } else {
       console.log(
@@ -152,5 +153,11 @@ export const DeepResearch = async (preciseQueries: string[] = []) => {
     }
   } catch (error) {
     console.error(error);
+
+    // If an error occurs, continue the research with the remaining queries
+    await new Promise(resolve =>
+      setTimeout(resolve, SEARCH_RATE_LIMIT_MILISECONDS),
+    );
+    await DeepResearch(preciseQueries);
   }
 };
