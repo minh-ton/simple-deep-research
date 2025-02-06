@@ -144,10 +144,10 @@ export const DeepResearch = async (preciseQueries: string[] = []) => {
       );
       researchReport += `\n## Reference Sources\n${state.sourceURLs.map(url => `- ${url}`).join('\n')}`;
 
-      await fs.writeFile('research.md', researchReport, 'utf-8');
+      await fs.writeFile('./research/research.md', researchReport, 'utf-8');
       console.log(
         chalk.green.bold(
-          '\nYour research report is ready! You can find it in research.md',
+          '\nYour research report is ready! You can find it in the "research" folder.',
         ),
       );
     }
