@@ -81,11 +81,7 @@ async function handleSearchResults(query: string) {
     if (state.allURLs.includes(url)) continue;
     state.allURLs.push(url);
 
-    const webpageInsights = await extractInsights(
-      url,
-      pageContent,
-      query,
-    );
+    const webpageInsights = await extractInsights(url, pageContent, query);
 
     if (webpageInsights.relevance.toLowerCase().includes('yes')) {
       console.log(chalk.yellow.bold(`Reading "${title}" from "${url}"`));
@@ -139,12 +135,14 @@ export const DeepResearch = async (preciseQueries: string[] = []) => {
           'Creating your research report... This might take a moment!',
         ),
       );
-      const researchReport = await generateResearchReport(
+      let researchReport = await generateResearchReport(
         state.collectedLearnings,
         state.userSearchQuery,
         queries,
         state.followUpQuestions,
       );
+      researchReport += `\n## Reference Sources\n${state.sourceURLs.map(url => `- ${url}`).join('\n')}`;
+
       await fs.writeFile('research.md', researchReport, 'utf-8');
       console.log(
         chalk.green.bold(
