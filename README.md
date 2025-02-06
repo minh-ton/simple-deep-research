@@ -4,9 +4,10 @@ This is a project where I try to develop a research agent that gathers and synth
 
 This is probably the simplest implementation of [OpenAI's Deep Research](https://openai.com/index/introducing-deep-research/) agent, designed for educational purposes!
 
-https://github.com/user-attachments/assets/dd93b4c2-66e6-43cf-b25b-f1c94067c85b
+https://github.com/user-attachments/assets/6e31801d-514a-41ab-8780-d694b9625632
 
-<sup>A preview of the agent with the most basic configuration (RESEARCH_DEPTH_LIMIT: 1; MAXIMUM_PRECISE_QUERIES: 3; SEARCH_RESULT_LIMIT: 3).</sup>
+<sup>A preview of the agent, using `gpt-4o-mini` (I don't have access to the `o3-mini` model).</sup>
+<br><sup>The generated research report can be found here: [research.md](https://github.com/minh-ton/simple-deep-research/blob/main/research.md)</sup>
 
 ## How It Works
 Here's a detailed overview of the agent's workflow:
@@ -42,7 +43,7 @@ pnpm run start
 The agent will start the research process by requesting a research query. You'll also need to answer several follow-up questions to refine the research focus. The agent will then execute the research workflow. The final report will be saved in your project directory, specifically under the `research.md` file.
 
 ## Configuring The Agent
-You can modify the agent's behaviors by altering the values in the `constant-config.json` file. Here's a brief explanation of the constants:
+You can tweak the agent's configuration by editing the `constant-config.json` file. Here's a brief explanation of the settings:
 ```
 "RESEARCH_DEPTH_LIMIT": 5,               // Maximum iterations to deepen research.
 "MAXIMUM_FOLLOWUP_QUESTIONS": 5,         // Maximum follow-up questions generated.
