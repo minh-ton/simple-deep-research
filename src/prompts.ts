@@ -57,7 +57,7 @@ export const generatePreciseQueryPrompt = (
 export const extractInsightsPrompt = (
   pageURL: string,
   pageContent: string,
-  userSearchQuery: string,
+  preciseQuery: string,
 ): string => `
     [Role: Expert Information Extractor - Strict and Concise Search Relevance Evaluator]
 
@@ -65,7 +65,7 @@ export const extractInsightsPrompt = (
     <page_content>${pageContent}</page_content>
 
     Using this content and considering the research query:
-    <user_query>${userSearchQuery}</user_query>
+    <precise_query>${preciseQuery}</precise_query>
 
     Please evaluate the relevance and quality of this webpage for addressing the research question. Respond with exactly one word: 'Yes' if the page is useful, or 'No' if it is not.
     If you conclude "Yes", extract and list the key insights, findings, or learnings relevant to the research question. Your output should:

@@ -84,7 +84,7 @@ async function handleSearchResults(query: string) {
     const webpageInsights = await extractInsights(
       url,
       pageContent,
-      state.userSearchQuery,
+      query,
     );
 
     if (webpageInsights.relevance.toLowerCase().includes('yes')) {
