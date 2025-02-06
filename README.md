@@ -7,7 +7,8 @@ This is probably the simplest implementation of [OpenAI's Deep Research](https:/
 https://github.com/user-attachments/assets/6e31801d-514a-41ab-8780-d694b9625632
 
 <sup>A preview of the agent, using `gpt-4o-mini` (I don't have access to the `o3-mini` model).</sup>
-<br><sup>The generated research report can be found here: [research.md](https://github.com/minh-ton/simple-deep-research/blob/main/research.md)</sup>
+<br><sup>The generated research report can be found here: [research.md](https://github.com/minh-ton/simple-deep-research/blob/main/research.md). Another research report can be found here: [research2.md](https://github.com/minh-ton/simple-deep-research/blob/main/research2.md).</sup>
+
 
 ## How It Works
 Here's a detailed overview of the agent's workflow:
